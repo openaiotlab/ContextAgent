@@ -1,11 +1,7 @@
 models=("qwen2.5:latest")
-# models=("llama3.1:8b" "qwen2.5:latest" "deepseek-r1" "qwen2.5:3b" "qwen2.5:1.5b" "deepseek-r1:1.5b" "qwen2.5:0.5b" "qwen2.5:72b" "llama3.1:70b" "deepseek-r1:32b" )
+
 combinations=(
-    "true wo_t wo_p"  # zs
-    # "false w_t w_p"   # 
-    # "false wo_t wo_p" # Context-only (ICL)
-    # "false wo_t w_p"  # ICL-P
-    # "false w_t wo_p"  # ICL-CoT
+    "false w_t w_p"   # 
 )
 
 for model in "${models[@]}"; do
@@ -15,7 +11,7 @@ for model in "${models[@]}"; do
         echo "Running experiment for model: $model, zs: $zs, think: $think, persona: $persona"
         
         # icl inference
-        CUDA_VISIBLE_DEVICES=CUDA_DEVICES=2,3,4,7 python src/icl/inference.py --dataset cab_lite --model_base $model --zs $zs --think $think --personas $persona
+        CUDA_VISIBLE_DEVICES=CUDA_DEVICES=0 python src/icl/inference.py --dataset cab_lite --model_base $model --zs $zs --think $think --personas $persona
         
         # score calculation
         python src/calculate_scores.py --dataset cab_lite --methods icl --model_base_icl $model --zs $zs --think $think --personas $persona

@@ -10,16 +10,10 @@ experiments=(
     "experiments/configs/cab_lite/inference/ds7b_lora_sft_wo_t.yaml|deepseek7b|--think wo_t"
 
     # Qwen-7B
-    # "experiments/configs/cab_lite/inference/qwen_lora_sft.yaml|qwen7b|"
-    # "experiments/configs/cab_lite/inference/qwen_lora_sft_wo_p.yaml|qwen7b|--personas wo_p"
     "experiments/configs/cab_lite/inference/qwen_lora_sft_wo_t.yaml|qwen7b|--think wo_t"
-    # "experiments/configs/cab_lite/inference/qwen_lora_sft_wo_t_wo_p.yaml|qwen7b|--think wo_t --personas wo_p"
-
+    
     # Llama3-8B
-    # "experiments/configs/cab_lite/inference/llama3_lora_sft.yaml|llama8b|"
-    # "experiments/configs/cab_lite/inference/llama3_lora_sft_wo_p.yaml|llama8b|--personas wo_p"
     "experiments/configs/cab_lite/inference/llama3_lora_sft_wo_t.yaml|llama8b|--think wo_t"
-    # "experiments/configs/cab_lite/inference/llama3_lora_sft_wo_t_wo_p.yaml|llama8b|--think wo_t --personas wo_p"
 )
 
 for exp in "${experiments[@]}"; do
