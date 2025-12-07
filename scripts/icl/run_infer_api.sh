@@ -3,11 +3,7 @@
 models=("gpt-35-turbo")
 # models=("gpt-35-turbo" "gpt-4o-2")
 combinations=(
-    "true wo_t wo_p"  
     "false w_t w_p"   
-    "false wo_t wo_p" 
-    "false wo_t w_p"  
-    "false w_t wo_p"  
 )
 
 for model in "${models[@]}"; do

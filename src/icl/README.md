@@ -57,25 +57,3 @@ After inference finishes, compute metrics per model:
 ```
 python src/calculate_scores.py --methods icl --model_base_icl <MODEL_NAME>
 ```
-
-### ️ ⚙️ Different Settings
-Batch runs with provided scripts:
-```
-bash scripts/icl/run_infer_local.sh
-bash scripts/icl/run_infer_api.sh
-```
-> [!NOTE]
-> - run_infer_local.sh runs experiments using open-source models.
-> - run_infer_api.sh runs experiments using proprietary models.
-
-Here are some additional settings you can test:
-| Setting              | Description                          |
-|---------------------|--------------------------------------|
-| `"true wo_t wo_p"`  | zero-shot (no tools, no extra prompt) |
-| `"false w_t w_p"`   | xxx                                  |
-| `"false wo_t wo_p"` | ICL                                  |
-| `"false wo_t w_p"`  | ICL-P                                |
-| `"false w_t wo_p"`  | ICL-CoT                              |
-
-
-

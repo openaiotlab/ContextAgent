@@ -2,11 +2,7 @@
 
 models=("qwen2.5:latest" "llama3.1:8b" "deepseek-r1")
 combinations=(
-    "true wo_t wo_p"  
     "false w_t w_p"   
-    "false wo_t wo_p" 
-    "false wo_t w_p" 
-    "false w_t wo_p"
 )
 
 for model in "${models[@]}"; do
